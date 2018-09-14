@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
-# bigip_config_cleaner.py
+# f5_upgrade_pair_tool.py
 # Author: Chad Jenison (c.jenison at f5.com)
 # Version 1.0
 #
-# Script that uses F5 BIG-IP iControl REST API to identify unused configuration elements (Virtual Servers, Pools, Pool Members) based on zero'd stats and state
-# If scan output is sent to CSV file, that file can be manually reviewed, pool member lines removed and then can be read in as input for removal of items with --remove option
-# --scanandremove option (with no human review other than prompting for confirmation of each member) should be used carefully
+# Script that uses F5 BIG-IP iControl REST API to upgrade a BIG-IP HA Pair in a
+# sensible manner so as to minimize service disruption and to abort and try to roll back if needed
+# Operator will be prompted to confirm failover, failback, etc
 
 import argparse
 import sys
